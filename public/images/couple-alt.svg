@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600" role="img" aria-label="AND SO, OUR FOREVER BEGINS">
+  <defs>
+    <linearGradient id="coupleAltGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D211B"/><stop offset="100%" stop-color="#6E3434"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#coupleAltGrad)"/>
+  <rect x="24" y="24" width="1152" height="1552" fill="none" stroke="#B89A5A" stroke-width="1" opacity="0.55"/>
+  
+  <g transform="translate(512 310) scale(2.2)" fill="none" stroke="#D3BC8A" stroke-width="1" opacity="0.75">
+    <path d="M40 6 C 34 14, 34 20, 40 24 C 46 20, 46 14, 40 6 Z"/>
+    <line x1="40" y1="24" x2="40" y2="40"/>
+    <ellipse cx="40" cy="44" rx="10" ry="4"/>
+    <path d="M18 50 Q 40 40, 62 50 L 58 58 Q 40 50, 22 58 Z"/>
+    <line x1="40" y1="58" x2="40" y2="70"/>
+    <path d="M14 70 Q 40 58, 66 70 L 60 82 Q 40 72, 20 82 Z"/>
+    <rect x="30" y="82" width="20" height="6" rx="1"/>
+    <rect x="24" y="88" width="32" height="6" rx="1"/>
+  </g><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(0 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(60 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(120 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(180 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(240 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="350" cy="1226.6" rx="9.360000000000001" ry="18.2" transform="rotate(300 350 1250)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><circle cx="350" cy="1250" r="7.800000000000001" fill="#F8F4EC" opacity="0.9"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(0 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(60 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(120 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(180 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(240 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><ellipse cx="850" cy="1330.2" rx="7.920000000000001" ry="15.400000000000002" transform="rotate(300 850 1350)" fill="none" stroke="#F8F4EC" stroke-width="1" opacity="0.8"/><circle cx="850" cy="1350" r="6.6000000000000005" fill="#F8F4EC" opacity="0.9"/>
+  <text x="600" y="1552" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-size="21.599999999999998" letter-spacing="4" fill="#F8F4EC" opacity="0.85">AND SO, OUR FOREVER BEGINS</text>
+</svg>
