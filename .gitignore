@@ -36,9 +36,6 @@ yarn-error.log*
 # vercel
 .vercel
 
-# local RSVP / guestbook submissions
-/data
-
 # raw, unoptimized source photos staged for editing — optimized copies live in public/images
 /public/new
 

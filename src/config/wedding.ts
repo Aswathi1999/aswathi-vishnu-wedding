@@ -118,7 +118,7 @@ export const weddingConfig: WeddingConfig = {
   },
 
   guestbook: {
-    enabled: true,
+    enabled: false,
   },
 
   rsvp: {
