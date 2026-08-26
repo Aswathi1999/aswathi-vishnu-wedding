@@ -9,15 +9,13 @@ export const weddingConfig: WeddingConfig = {
   bride: {
     name: "Aswathi",
     fullName: "Aswathi",
-    about:
-      "Warm-hearted and full of quiet joy, Aswathi brings light to every room she enters.",
+    location: "Calicut",
     image: "/images/aswathi.jpg",
   },
   groom: {
     name: "Vishnu",
     fullName: "Vishnu",
-    about:
-      "Grounded and easygoing, Vishnu finds the best in every moment and every person.",
+    location: "Guruvayoor",
     image: "/images/vishnu.jpg",
   },
 

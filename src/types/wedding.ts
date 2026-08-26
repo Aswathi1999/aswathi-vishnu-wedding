@@ -1,7 +1,7 @@
 export interface PersonInfo {
   name: string;
   fullName: string;
-  about: string;
+  location: string;
   image: string;
   parents?: string;
 }

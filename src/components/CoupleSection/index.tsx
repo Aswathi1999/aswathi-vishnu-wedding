@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -33,7 +34,10 @@ export function CoupleSection() {
             </div>
             <div>
               <h3 className="font-serif text-2xl tracking-[0.15em] uppercase text-brown">{groom.name}</h3>
-              <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-brown-soft/85">{groom.about}</p>
+              <p className="mt-2 flex items-center justify-center gap-1.5 text-xs tracking-[0.2em] uppercase text-brown-soft/70">
+                <MapPin size={12} aria-hidden="true" />
+                {groom.location}
+              </p>
             </div>
           </Reveal>
 
@@ -55,7 +59,10 @@ export function CoupleSection() {
             </div>
             <div>
               <h3 className="font-serif text-2xl tracking-[0.15em] uppercase text-brown">{bride.name}</h3>
-              <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-brown-soft/85">{bride.about}</p>
+              <p className="mt-2 flex items-center justify-center gap-1.5 text-xs tracking-[0.2em] uppercase text-brown-soft/70">
+                <MapPin size={12} aria-hidden="true" />
+                {bride.location}
+              </p>
             </div>
           </Reveal>
         </div>
