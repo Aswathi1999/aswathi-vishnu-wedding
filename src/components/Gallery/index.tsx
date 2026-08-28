@@ -7,6 +7,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function Gallery() {
   const { gallery } = weddingConfig;
@@ -41,11 +42,13 @@ export function Gallery() {
   const active = activeIndex !== null ? gallery.images[activeIndex] : null;
 
   return (
-    <section id="gallery" className="bg-ivory px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section id="gallery" className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="gallery" tone="blush" corners="tr-bl" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading eyebrow="Captured Moments" title="Our Moments" />
 
-        <div className="mt-16 columns-2 gap-3 sm:columns-3 sm:gap-4">
+        <div className="mt-12 columns-2 gap-3 sm:columns-3 sm:gap-4">
           {gallery.images.map((image, index) => (
             <Reveal key={image.src} delay={0.04 * (index % 6)} className="mb-3 break-inside-avoid sm:mb-4">
               <button

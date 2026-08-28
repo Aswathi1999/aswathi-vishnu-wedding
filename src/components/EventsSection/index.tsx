@@ -1,5 +1,6 @@
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 import { EventCard } from "./EventCard";
 
 export function EventsSection() {
@@ -8,12 +9,14 @@ export function EventsSection() {
   if (events.length === 0) return null;
 
   return (
-    <section id="event" className="bg-sand/40 px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="event" className="relative overflow-hidden bg-sand/40 px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="events" tone="blush" corners="tr-bl" />
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <SectionHeading eyebrow="The Celebration" title={events.length > 1 ? "Wedding Events" : "The Wedding"} />
 
         <div
-          className={`mt-16 grid gap-10 ${
+          className={`mt-12 grid gap-10 ${
             events.length > 1 ? "sm:grid-cols-2" : ""
           }`}
         >

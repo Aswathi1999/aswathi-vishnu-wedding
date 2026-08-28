@@ -102,21 +102,20 @@ export const weddingConfig: WeddingConfig = {
   },
 
   video: {
-    enabled: true,
+    enabled: false,
     url: "",
     poster: "/images/hero.jpg",
   },
 
   music: {
     enabled: true,
-    // Placeholder demo track (synthesized pentatonic melody + drone) — replace with a licensed
-    // Kerala/Carnatic instrumental before going live.
-    src: "/audio/wedding-theme.wav",
-    title: "A Kerala Wedding Instrumental (Demo)",
+    src: "/audio/the-final-year_6XNgsKYY.mp3",
+    title: "The Final Year",
   },
 
-  guestbook: {
-    enabled: false,
+  blessings: {
+    enabled: true,
+    web3formsAccessKey: "4811e38d-b7fa-4531-a803-9f973f90b43c",
   },
 
   rsvp: {
@@ -124,7 +123,7 @@ export const weddingConfig: WeddingConfig = {
   },
 
   qr: {
-    enabled: true,
+    enabled: false,
   },
 
   images: {

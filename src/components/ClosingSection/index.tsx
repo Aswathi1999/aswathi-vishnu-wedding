@@ -3,6 +3,7 @@ import { weddingConfig } from "@/config/wedding";
 import { formatDotDate } from "@/lib/date";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function ClosingSection() {
   const { bride, groom, weddingDate, images } = weddingConfig;
@@ -19,6 +20,8 @@ export function ClosingSection() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brown/70 via-brown/50 to-brown/90" />
       </div>
+
+      <SectionFloralAccent id="closing" tone="gold" corners="tl-br" size="sm" />
 
       <div className="relative z-10 flex flex-col items-center gap-6 px-6 py-24 text-center">
         <Reveal>

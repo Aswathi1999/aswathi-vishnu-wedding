@@ -4,17 +4,20 @@ import { weddingConfig } from "@/config/wedding";
 import { getMapsUrl } from "@/lib/maps";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function VenueSection() {
   const { location, images } = weddingConfig;
   const mapsUrl = getMapsUrl(location);
 
   return (
-    <section id="venue" className="bg-ivory px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-6xl">
+    <section id="venue" className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="venue" tone="blush" corners="tr-bl" />
+
+      <div className="relative z-10 mx-auto max-w-6xl">
         <SectionHeading eyebrow="The Venue" title={'Where We Say "I Do"'} />
 
-        <div className="mt-16 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
+        <div className="mt-12 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
           <Reveal className="relative aspect-[4/3] w-full overflow-hidden">
             <Image
               src={images.venue}

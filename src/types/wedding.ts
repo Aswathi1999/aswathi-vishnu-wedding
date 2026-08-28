@@ -102,8 +102,10 @@ export interface WeddingConfig {
     title: string;
   };
 
-  guestbook: {
+  blessings: {
     enabled: boolean;
+    /** Web3Forms access key (web3forms.com) — submissions email directly to the account tied to this key. */
+    web3formsAccessKey: string;
   };
 
   rsvp: {

@@ -4,6 +4,7 @@ import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function TravelSection() {
   const { travel, contact, bride, groom } = weddingConfig;
@@ -19,12 +20,14 @@ export function TravelSection() {
   const helpMessage = `Hi! I have a question about traveling for ${bride.name} & ${groom.name}'s wedding.`;
 
   return (
-    <section className="bg-sand/40 px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section className="relative overflow-hidden bg-sand/40 px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="travel" tone="blush" corners="tl-br" />
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <SectionHeading eyebrow="Getting Here" title="Travel &amp; Stay" />
 
         {gettingThereItems.length > 0 ? (
-          <div className="mt-16">
+          <div className="mt-12">
             <h3 className="text-center font-serif text-2xl text-brown">Getting There</h3>
             <div className="mt-8 grid gap-8 sm:grid-cols-3">
               {gettingThereItems.map(({ icon: Icon, label, value }, index) => (
@@ -39,7 +42,7 @@ export function TravelSection() {
         ) : null}
 
         {travel.stay.length > 0 ? (
-          <div className="mt-20">
+          <div className="mt-14">
             <GoldDivider className="mx-auto mb-12" />
             <h3 className="text-center font-serif text-2xl text-brown">Where to Stay</h3>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -66,7 +69,7 @@ export function TravelSection() {
         ) : null}
 
         {contact.whatsapp ? (
-          <Reveal className="mt-20 flex flex-col items-center gap-4 text-center">
+          <Reveal className="mt-14 flex flex-col items-center gap-4 text-center">
             <GoldDivider className="mb-4" />
             <p className="font-serif text-xl text-brown">Need Help?</p>
             <a

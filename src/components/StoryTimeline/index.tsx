@@ -1,6 +1,7 @@
 import { weddingConfig } from "@/config/wedding";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 import { formatDotDate } from "@/lib/date";
 
 export function StoryTimeline() {
@@ -11,11 +12,13 @@ export function StoryTimeline() {
   const items = [...story.milestones, { title: "Forever Begins", description: formatDotDate(weddingDate) }];
 
   return (
-    <section id="story" className="bg-ivory px-5 pt-10 pb-24 sm:px-8 sm:pt-14 sm:pb-32">
-      <div className="mx-auto max-w-3xl">
+    <section id="story" className="relative overflow-hidden bg-ivory px-5 pt-10 pb-24 sm:px-8 sm:pt-14 sm:pb-32">
+      <SectionFloralAccent id="story" tone="blush" corners="tl-br" />
+
+      <div className="relative z-10 mx-auto max-w-3xl">
         <SectionHeading eyebrow="Our Story" title="Our Story" subtitle={story.intro} />
 
-        <ol className="relative mt-16 flex flex-col gap-12 border-l border-gold/40 pl-8 sm:pl-12">
+        <ol className="relative mt-12 flex flex-col gap-12 border-l border-gold/40 pl-8 sm:pl-12">
           {items.map((item, index) => (
             <li key={item.title} className="relative">
               <span

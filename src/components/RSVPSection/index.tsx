@@ -7,6 +7,7 @@ import { formatLongDate } from "@/lib/date";
 import { buildWhatsAppUrl, rsvpWhatsAppMessage } from "@/lib/whatsapp";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -62,11 +63,13 @@ export function RSVPSection() {
   };
 
   return (
-    <section id="rsvp" className="bg-ivory px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-xl">
+    <section id="rsvp" className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="rsvp" tone="blush" corners="tl-br" />
+
+      <div className="relative z-10 mx-auto max-w-xl">
         <SectionHeading title="We Would Love to Celebrate With You" />
 
-        <Reveal delay={0.15} className="mt-16">
+        <Reveal delay={0.15} className="mt-12">
           {status === "success" ? (
             <div className="flex flex-col items-center gap-4 border border-gold/30 px-8 py-16 text-center">
               <p className="text-xs tracking-[0.35em] uppercase text-gold">Thank You</p>

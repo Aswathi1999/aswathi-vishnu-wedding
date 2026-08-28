@@ -7,6 +7,7 @@ import { formatDotDate } from "@/lib/date";
 import { buildGoogleCalendarUrl, downloadIcs } from "@/lib/calendar";
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function SaveTheDate() {
   const { bride, groom, weddingDate, location, events } = weddingConfig;
@@ -22,8 +23,10 @@ export function SaveTheDate() {
   };
 
   return (
-    <section className="bg-brown px-5 py-24 text-ivory sm:px-8 sm:py-32">
-      <div className="mx-auto flex max-w-xl flex-col items-center gap-6 text-center">
+    <section className="relative overflow-hidden bg-brown px-5 py-16 text-ivory sm:px-8 sm:py-24">
+      <SectionFloralAccent id="savethedate" tone="gold" corners="tr-bl" />
+
+      <div className="relative z-10 mx-auto flex max-w-xl flex-col items-center gap-6 text-center">
         <Reveal>
           <p className="text-xs tracking-[0.4em] uppercase text-gold-light">Save the Date</p>
         </Reveal>

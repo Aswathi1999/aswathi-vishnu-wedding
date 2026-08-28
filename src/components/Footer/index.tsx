@@ -1,13 +1,16 @@
 import { weddingConfig } from "@/config/wedding";
 import { formatDotDate } from "@/lib/date";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function Footer() {
   const { bride, groom, weddingDate } = weddingConfig;
 
   return (
-    <footer className="bg-ivory px-5 py-12 pb-24 text-center sm:px-8 md:pb-12">
-      <div className="mx-auto flex max-w-md flex-col items-center gap-4">
+    <footer className="relative overflow-hidden bg-ivory px-5 py-10 pb-16 text-center sm:px-8 md:pb-10">
+      <SectionFloralAccent id="footer" tone="blush" corners="tr-bl" size="sm" />
+
+      <div className="relative z-10 mx-auto flex max-w-md flex-col items-center gap-4">
         <p className="font-serif text-lg tracking-[0.15em] text-brown">
           {bride.name} &amp; {groom.name}
         </p>

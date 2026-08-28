@@ -1,11 +1,14 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 import { NilavilakkuMotif } from "@/components/ui/motifs";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function SacredSection() {
   return (
-    <section className="bg-brown px-5 py-24 text-ivory sm:px-8 sm:py-28">
-      <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
+    <section className="relative overflow-hidden bg-brown px-5 py-16 text-ivory sm:px-8 sm:py-20">
+      <SectionFloralAccent id="sacred" tone="gold" corners="tl-br" />
+
+      <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-8 text-center">
         <Reveal>
           <NilavilakkuMotif className="h-20 w-16 text-gold-light" />
         </Reveal>

@@ -26,11 +26,22 @@ export function MusicPlayer() {
     return () => window.removeEventListener(START_MUSIC_EVENT, onStart);
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const onEnded = () => {
+      audio.currentTime = 0;
+      audio.play().catch(() => setAvailable(false));
+    };
+    audio.addEventListener("ended", onEnded);
+    return () => audio.removeEventListener("ended", onEnded);
+  }, []);
+
   if (!music.enabled || !music.src) return null;
 
   return (
     <>
-      <audio ref={audioRef} src={music.src} loop preload="none" onError={() => setAvailable(false)} />
+      <audio ref={audioRef} src={music.src} loop preload="auto" onError={() => setAvailable(false)} />
       <button
         type="button"
         onClick={() => setPlaying((v) => !v)}

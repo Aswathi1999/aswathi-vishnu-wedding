@@ -6,6 +6,7 @@ import { weddingConfig } from "@/config/wedding";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function ShareSection() {
   const { bride, groom, siteUrl } = weddingConfig;
@@ -35,8 +36,10 @@ export function ShareSection() {
   };
 
   return (
-    <section className="bg-ivory px-5 py-24 sm:px-8 sm:py-28">
-      <div className="mx-auto flex max-w-lg flex-col items-center gap-8 text-center">
+    <section className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-20">
+      <SectionFloralAccent id="share" tone="blush" corners="tl-br" size="sm" />
+
+      <div className="relative z-10 mx-auto flex max-w-lg flex-col items-center gap-8 text-center">
         <SectionHeading eyebrow="Share the Love" title="Share Our Invitation" />
 
         <Reveal delay={0.15} className="flex flex-wrap items-center justify-center gap-4">

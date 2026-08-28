@@ -5,6 +5,7 @@ import { useCountdown } from "@/lib/useCountdown";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 const units: Array<{ key: "days" | "hours" | "minutes" | "seconds"; label: string }> = [
   { key: "days", label: "Days" },
@@ -18,8 +19,10 @@ export function Countdown() {
   const countdown = useCountdown(weddingDate);
 
   return (
-    <section className="bg-brown px-5 py-24 text-ivory sm:px-8 sm:py-32">
-      <div className="mx-auto flex max-w-3xl flex-col items-center">
+    <section className="relative overflow-hidden bg-brown px-5 py-16 text-ivory sm:px-8 sm:py-24">
+      <SectionFloralAccent id="countdown" tone="gold" corners="tr-bl" />
+
+      <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center">
         <SectionHeading eyebrow="The Big Day" title="Counting Down to Forever" light align="center" />
 
         <GoldDivider className="my-10 opacity-70" />

@@ -11,8 +11,7 @@ import { VenueSection } from "@/components/VenueSection";
 import { TravelSection } from "@/components/TravelSection";
 import { SaveTheDate } from "@/components/SaveTheDate";
 import { RSVPSection } from "@/components/RSVPSection";
-import { Guestbook } from "@/components/Guestbook";
-import { ShareSection } from "@/components/ShareSection";
+import { BlessingsSection } from "@/components/BlessingsSection";
 import { QRSection } from "@/components/QRSection";
 import { ClosingSection } from "@/components/ClosingSection";
 import { Footer } from "@/components/Footer";
@@ -33,8 +32,7 @@ export default function Home() {
         <TravelSection />
         <SaveTheDate />
         <RSVPSection />
-        <Guestbook />
-        <ShareSection />
+        <BlessingsSection />
         <QRSection />
         <ClosingSection />
       </main>

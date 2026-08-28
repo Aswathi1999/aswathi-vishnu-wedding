@@ -2,6 +2,7 @@ import QRCode from "qrcode";
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export async function QRSection() {
   const { qr, siteUrl } = weddingConfig;
@@ -15,8 +16,10 @@ export async function QRSection() {
   });
 
   return (
-    <section className="bg-ivory px-5 py-24 sm:px-8 sm:py-28">
-      <div className="mx-auto flex max-w-md flex-col items-center gap-8 text-center">
+    <section className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-20">
+      <SectionFloralAccent id="qr" tone="blush" corners="tr-bl" size="sm" />
+
+      <div className="relative z-10 mx-auto flex max-w-md flex-col items-center gap-8 text-center">
         <SectionHeading eyebrow="Print &amp; Share" title="Scan to Open Our Invitation" />
 
         <Reveal delay={0.15} className="border border-gold/30 bg-ivory p-6">

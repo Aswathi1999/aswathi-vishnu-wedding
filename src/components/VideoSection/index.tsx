@@ -6,6 +6,7 @@ import { Play } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 
 export function VideoSection() {
   const { video, bride, groom } = weddingConfig;
@@ -14,11 +15,13 @@ export function VideoSection() {
   if (!video.enabled) return null;
 
   return (
-    <section className="bg-ivory px-5 py-24 sm:px-8 sm:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section className="relative overflow-hidden bg-ivory px-5 py-16 sm:px-8 sm:py-24">
+      <SectionFloralAccent id="video" tone="blush" corners="tl-br" />
+
+      <div className="relative z-10 mx-auto max-w-5xl">
         <SectionHeading eyebrow="In Motion" title="A Little Glimpse of Us" />
 
-        <Reveal delay={0.15} className="mt-16">
+        <Reveal delay={0.15} className="mt-12">
           <div className="relative aspect-video w-full overflow-hidden bg-brown">
             {video.url ? (
               playing ? (
