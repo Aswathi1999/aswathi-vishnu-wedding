@@ -1,8 +1,19 @@
+import fs from "node:fs";
+import path from "node:path";
 import { weddingConfig } from "@/config/wedding";
 import { formatDotDate } from "@/lib/date";
 
+function readImageAsDataUri(publicPath: string): string {
+  const filePath = path.join(process.cwd(), "public", publicPath);
+  const buffer = fs.readFileSync(filePath);
+  const ext = path.extname(filePath).slice(1);
+  const mime = ext === "svg" ? "image/svg+xml" : `image/${ext === "jpg" ? "jpeg" : ext}`;
+  return `data:${mime};base64,${buffer.toString("base64")}`;
+}
+
 export function buildOgImageElement() {
-  const { bride, groom, weddingDate, location } = weddingConfig;
+  const { bride, groom, weddingDate, location, hero } = weddingConfig;
+  const photoSrc = readImageAsDataUri(hero.image);
 
   return (
     <div
@@ -10,37 +21,63 @@ export function buildOgImageElement() {
         width: "100%",
         height: "100%",
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         background: "#F8F4EC",
-        color: "#2D211B",
         fontFamily: "Georgia, serif",
-        padding: 80,
-        position: "relative",
       }}
     >
+      <div style={{ display: "flex", width: 460, height: "100%", position: "relative" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={photoSrc}
+          alt=""
+          width={460}
+          height={630}
+          style={{ width: 460, height: 630, objectFit: "cover" }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right, rgba(45,33,27,0) 60%, rgba(248,244,236,0.9) 100%)",
+            display: "flex",
+          }}
+        />
+      </div>
+
       <div
         style={{
-          position: "absolute",
-          top: 40,
-          left: 40,
-          right: 40,
-          bottom: 40,
-          border: "1px solid #B89A5A",
           display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          justifyContent: "center",
+          flex: 1,
+          color: "#2D211B",
+          padding: "0 64px",
+          position: "relative",
         }}
-      />
-      <div style={{ display: "flex", fontSize: 22, letterSpacing: 8, color: "#B89A5A" }}>
-        WE&apos;RE GETTING MARRIED
-      </div>
-      <div style={{ display: "flex", alignItems: "center", gap: 36, marginTop: 28 }}>
-        <div style={{ display: "flex", fontSize: 76 }}>{bride.name}</div>
-        <div style={{ display: "flex", fontSize: 44, color: "#B89A5A" }}>&amp;</div>
-        <div style={{ display: "flex", fontSize: 76 }}>{groom.name}</div>
-      </div>
-      <div style={{ display: "flex", marginTop: 30, fontSize: 26, color: "#4A3A30" }}>
-        {formatDotDate(weddingDate)} &nbsp;·&nbsp; {location.venue}, {location.city}
+      >
+        <div
+          style={{
+            position: "absolute",
+            top: 40,
+            left: 24,
+            right: 40,
+            bottom: 40,
+            border: "1px solid #B89A5A",
+            display: "flex",
+          }}
+        />
+        <div style={{ display: "flex", fontSize: 20, letterSpacing: 6, color: "#B89A5A" }}>
+          WE&apos;RE GETTING MARRIED
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", marginTop: 22, fontSize: 62, lineHeight: 1.05 }}>
+          <div style={{ display: "flex" }}>{bride.name}</div>
+          <div style={{ display: "flex", fontSize: 36, color: "#B89A5A", margin: "6px 0" }}>&amp;</div>
+          <div style={{ display: "flex" }}>{groom.name}</div>
+        </div>
+        <div style={{ display: "flex", marginTop: 26, fontSize: 22, color: "#4A3A30" }}>
+          {formatDotDate(weddingDate)} &nbsp;·&nbsp; {location.venue}, {location.city}
+        </div>
       </div>
     </div>
   );
