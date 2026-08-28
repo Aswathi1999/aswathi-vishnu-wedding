@@ -37,6 +37,20 @@ export function MusicPlayer() {
     return () => audio.removeEventListener("ended", onEnded);
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        audio.pause();
+      } else if (playing) {
+        audio.play().catch(() => setAvailable(false));
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, [playing]);
+
   if (!music.enabled || !music.src) return null;
 
   return (
