@@ -22,6 +22,8 @@ const { bride, groom, weddingDate, location } = weddingConfig;
 const weddingDateLabel = formatLongDate(weddingDate);
 const title = `${bride.name} & ${groom.name} — Wedding Invitation`;
 const description = `Join ${bride.name} and ${groom.name} as they begin their beautiful journey together on ${weddingDateLabel} in ${location.city}, ${location.state}.`;
+const shareTitle = `You're Invited — ${bride.name} & ${groom.name}'s Wedding`;
+const shareDescription = `We're getting married on ${weddingDateLabel} at ${location.venue}, ${location.city}. We'd love for you to join us!`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(weddingConfig.siteUrl),
@@ -34,8 +36,8 @@ export const metadata: Metadata = {
     location.city,
   ],
   openGraph: {
-    title: `${bride.name} & ${groom.name}`,
-    description: `We're Getting Married! ${weddingDateLabel} · ${location.venue} · ${location.city}`,
+    title: shareTitle,
+    description: shareDescription,
     url: weddingConfig.siteUrl,
     siteName: `${bride.name} & ${groom.name} Wedding`,
     type: "website",
@@ -43,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${bride.name} & ${groom.name}`,
-    description: `We're Getting Married! ${weddingDateLabel} · ${location.venue} · ${location.city}`,
+    title: shareTitle,
+    description: shareDescription,
   },
 };
 
