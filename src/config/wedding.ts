@@ -92,12 +92,12 @@ export const weddingConfig: WeddingConfig = {
   gallery: {
     enabled: true,
     images: [
-      { src: "/images/gallery-01.jpg", alt: "Aswathi and Vishnu walking hand in hand by the sea" },
-      { src: "/images/gallery-02.jpg", alt: "Aswathi and Vishnu strolling along the shoreline" },
-      { src: "/images/gallery-03.jpg", alt: "Aswathi and Vishnu sharing a quiet moment by the sea" },
       { src: "/images/gallery-04.jpg", alt: "Aswathi and Vishnu smiling together" },
       { src: "/images/460e8068-dce4-4620-9d69-4d52f46f182d.jpeg", alt: "Aswathi and Vishnu in traditional attire" },
+      { src: "/images/gallery-01.jpg", alt: "Aswathi and Vishnu walking hand in hand by the sea" },
       { src: "/images/gallery-06.jpg", alt: "Aswathi and Vishnu embracing at the entrance" },
+      { src: "/images/gallery-03.jpg", alt: "Aswathi and Vishnu sharing a quiet moment by the sea" },
+      { src: "/images/gallery-02.jpg", alt: "Aswathi and Vishnu strolling along the shoreline" },
     ],
   },
 
