@@ -36,7 +36,7 @@ export const weddingConfig: WeddingConfig = {
     whatsapp: "",
   },
 
-  siteUrl: "https://aswathi-and-vishnu.wedding",
+  siteUrl: "https://aswathi-vishnu-wedding.vercel.app",
 
   hero: {
     image: "/images/hero.jpg",
