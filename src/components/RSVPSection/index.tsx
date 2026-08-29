@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Loader2, MessageCircle } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { formatLongDate } from "@/lib/date";
@@ -70,16 +71,32 @@ export function RSVPSection() {
         <SectionHeading title="We Would Love to Celebrate With You" />
 
         <Reveal delay={0.15} className="mt-12">
-          {status === "success" ? (
-            <div className="flex flex-col items-center gap-4 border border-gold/30 px-8 py-16 text-center">
-              <p className="text-xs tracking-[0.35em] uppercase text-gold">Thank You</p>
-              <p className="font-serif text-2xl text-brown">Your response has been received.</p>
-              <p className="max-w-sm text-sm leading-relaxed text-brown-soft/85">
-                We can&apos;t wait to celebrate this beautiful day with you.
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-6">
+          <AnimatePresence mode="wait" initial={false}>
+            {status === "success" ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col items-center gap-4 border border-gold/30 px-8 py-16 text-center"
+              >
+                <p className="text-xs tracking-[0.35em] uppercase text-gold">Thank You</p>
+                <p className="font-serif text-2xl text-brown">Your response has been received.</p>
+                <p className="max-w-sm text-sm leading-relaxed text-brown-soft/85">
+                  We can&apos;t wait to celebrate this beautiful day with you.
+                </p>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                onSubmit={handleSubmit}
+                noValidate
+                className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 <label htmlFor="rsvp-name" className="text-xs tracking-[0.25em] uppercase text-brown-soft">
                   Name
@@ -188,8 +205,9 @@ export function RSVPSection() {
                   RSVP via WhatsApp
                 </a>
               ) : null}
-            </form>
-          )}
+              </motion.form>
+            )}
+          </AnimatePresence>
         </Reveal>
       </div>
     </section>

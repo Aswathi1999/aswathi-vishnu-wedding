@@ -5,6 +5,7 @@ import { getMapsUrl } from "@/lib/maps";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
+import { scaleIn } from "@/lib/motion";
 
 export function VenueSection() {
   const { location, images } = weddingConfig;
@@ -18,7 +19,7 @@ export function VenueSection() {
         <SectionHeading eyebrow="The Venue" title={'Where We Say "I Do"'} />
 
         <div className="mt-12 grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
-          <Reveal className="relative aspect-[4/3] w-full overflow-hidden">
+          <Reveal variants={scaleIn} className="relative aspect-[4/3] w-full overflow-hidden">
             <Image
               src={images.venue}
               alt={location.venue}

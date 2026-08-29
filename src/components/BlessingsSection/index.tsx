@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Loader2, Mail } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -59,23 +60,39 @@ export function BlessingsSection() {
         />
 
         <Reveal delay={0.15} className="mx-auto mt-10 max-w-md text-left">
-          {status === "success" ? (
-            <div className="flex flex-col items-center gap-3 border border-gold/30 px-8 py-14 text-center">
-              <p className="text-xs tracking-[0.35em] uppercase text-gold">Thank You</p>
-              <p className="font-serif text-xl text-brown">Your blessing has been sent.</p>
-              <p className="max-w-sm text-sm leading-relaxed text-brown-soft/85">
-                We can&apos;t wait to read your kind words.
-              </p>
-              <button
-                type="button"
-                onClick={() => setStatus("idle")}
-                className="mt-2 text-xs tracking-[0.25em] uppercase text-gold underline underline-offset-4 hover:text-brown"
+          <AnimatePresence mode="wait" initial={false}>
+            {status === "success" ? (
+              <motion.div
+                key="success"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col items-center gap-3 border border-gold/30 px-8 py-14 text-center"
               >
-                Write another
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+                <p className="text-xs tracking-[0.35em] uppercase text-gold">Thank You</p>
+                <p className="font-serif text-xl text-brown">Your blessing has been sent.</p>
+                <p className="max-w-sm text-sm leading-relaxed text-brown-soft/85">
+                  We can&apos;t wait to read your kind words.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus("idle")}
+                  className="mt-2 text-xs tracking-[0.25em] uppercase text-gold underline underline-offset-4 hover:text-brown"
+                >
+                  Write another
+                </button>
+              </motion.div>
+            ) : (
+              <motion.form
+                key="form"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                onSubmit={handleSubmit}
+                noValidate
+                className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
                 <label htmlFor="blessing-name" className="text-xs tracking-[0.25em] uppercase text-brown-soft">
                   Your Name
@@ -118,8 +135,9 @@ export function BlessingsSection() {
                 )}
                 Send Your Blessing
               </button>
-            </form>
-          )}
+              </motion.form>
+            )}
+          </AnimatePresence>
         </Reveal>
       </div>
     </section>

@@ -80,6 +80,21 @@ body {
   text-wrap: balance;
 }
 
+/* Very subtle ambient drift for the watercolor floral accents */
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

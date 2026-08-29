@@ -4,6 +4,7 @@ import "./globals.css";
 import { weddingConfig } from "@/config/wedding";
 import { formatLongDate } from "@/lib/date";
 import { MusicPlayer } from "@/components/MusicPlayer";
+import { MotionProvider } from "@/components/ui/MotionProvider";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -60,8 +61,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${playfair.variable} ${manrope.variable}`}>
       <body className="min-h-screen bg-ivory text-brown font-sans antialiased overflow-x-hidden selection:bg-gold selection:text-ivory">
-        {children}
-        <MusicPlayer />
+        <MotionProvider>
+          {children}
+          <MusicPlayer />
+        </MotionProvider>
       </body>
     </html>
   );

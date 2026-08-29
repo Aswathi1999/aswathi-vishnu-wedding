@@ -8,6 +8,7 @@ import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
+import { scaleIn } from "@/lib/motion";
 
 export function Gallery() {
   const { gallery } = weddingConfig;
@@ -50,7 +51,12 @@ export function Gallery() {
 
         <div className="mt-12 columns-2 gap-3 sm:columns-3 sm:gap-4">
           {gallery.images.map((image, index) => (
-            <Reveal key={image.src} delay={0.04 * (index % 6)} className="mb-3 break-inside-avoid sm:mb-4">
+            <Reveal
+              key={image.src}
+              variants={scaleIn}
+              delay={0.04 * (index % 6)}
+              className="mb-3 break-inside-avoid sm:mb-4"
+            >
               <button
                 type="button"
                 onClick={() => setActiveIndex(index)}
@@ -83,7 +89,7 @@ export function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             onClick={close}
             onTouchStart={(e) => {
               touchStartX.current = e.touches[0].clientX;
@@ -121,7 +127,7 @@ export function Gallery() {
               key={active.src}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.35 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className="relative max-h-[85vh] w-full max-w-4xl"
               onClick={(e) => e.stopPropagation()}
             >

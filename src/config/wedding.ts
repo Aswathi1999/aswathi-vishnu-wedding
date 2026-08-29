@@ -43,7 +43,7 @@ export const weddingConfig: WeddingConfig = {
   },
 
   story: {
-    enabled: true,
+    enabled: false,
     intro:
       "Some stories are written in moments. Ours is written in memories.",
     milestones: [
@@ -72,7 +72,6 @@ export const weddingConfig: WeddingConfig = {
       timeLabel: "Muhurtham",
       venue: "Amrutham Auditorium",
       address: "Calicut, Kerala",
-      dressCode: "Traditional Attire",
       description:
         "Join us as we take our vows in a sacred Hindu ceremony, blessed by our families.",
       mapsUrl: "",
