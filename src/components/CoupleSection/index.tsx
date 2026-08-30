@@ -45,6 +45,7 @@ function PortraitCard({ person, role }: { person: PersonInfo; role: "Groom" | "B
           src={person.image}
           alt={person.fullName}
           fill
+          priority
           sizes="(min-width: 768px) 300px, (min-width: 640px) 260px, 230px"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
