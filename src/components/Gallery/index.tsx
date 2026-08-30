@@ -6,9 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { weddingConfig } from "@/config/wedding";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/ui/Reveal";
 import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
-import { scaleIn } from "@/lib/motion";
 
 export function Gallery() {
   const { gallery } = weddingConfig;
@@ -51,11 +49,10 @@ export function Gallery() {
 
         <div className="mt-12 columns-2 gap-3 sm:columns-3 sm:gap-4">
           {gallery.images.map((image, index) => (
-            <Reveal
+            <div
               key={image.src}
-              variants={scaleIn}
-              delay={0.04 * (index % 6)}
-              className="mb-3 break-inside-avoid sm:mb-4"
+              className="animate-fade-up mb-3 break-inside-avoid sm:mb-4"
+              style={{ animationDelay: `${0.04 * (index % 6)}s`, animationFillMode: "both" }}
             >
               <button
                 type="button"
@@ -74,7 +71,7 @@ export function Gallery() {
                 />
                 <span className="absolute inset-0 bg-brown/0 transition-colors duration-500 group-hover:bg-brown/10" />
               </button>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
