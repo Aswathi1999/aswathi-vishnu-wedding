@@ -7,10 +7,19 @@ interface SectionHeadingProps {
   subtitle?: ReactNode;
   align?: "center" | "left";
   light?: boolean;
+  size?: "lg" | "md";
 }
 
-export function SectionHeading({ eyebrow, title, subtitle, align = "center", light = false }: SectionHeadingProps) {
+export function SectionHeading({
+  eyebrow,
+  title,
+  subtitle,
+  align = "center",
+  light = false,
+  size = "lg",
+}: SectionHeadingProps) {
   const alignment = align === "center" ? "items-center text-center mx-auto" : "items-start text-left";
+  const titleSize = size === "lg" ? "text-3xl sm:text-4xl md:text-5xl" : "text-2xl sm:text-3xl md:text-4xl";
 
   return (
     <div className={`flex flex-col ${alignment} max-w-2xl gap-4`}>
@@ -27,7 +36,7 @@ export function SectionHeading({ eyebrow, title, subtitle, align = "center", lig
       ) : null}
       <Reveal delay={0.1}>
         <h2
-          className={`font-serif text-3xl sm:text-4xl md:text-5xl leading-[1.15] text-balance ${
+          className={`font-serif ${titleSize} leading-[1.15] text-balance ${
             light ? "text-ivory" : "text-brown"
           }`}
         >

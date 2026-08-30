@@ -47,7 +47,7 @@ export function Gallery() {
       <SectionFloralAccent id="gallery" tone="blush" corners="tr-bl" />
 
       <div className="relative z-10 mx-auto max-w-6xl">
-        <SectionHeading eyebrow="Captured Moments" title="Our Moments" />
+        <SectionHeading eyebrow="Captured Moments" title="Engagement Glimpses" size="md" />
 
         <div className="mt-12 columns-2 gap-3 sm:columns-3 sm:gap-4">
           {gallery.images.map((image, index) => (

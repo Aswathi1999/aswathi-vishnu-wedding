@@ -1,5 +1,4 @@
 import { weddingConfig } from "@/config/wedding";
-import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SectionFloralAccent } from "@/components/ui/SectionFloralAccent";
 import { EventCard } from "./EventCard";
 
@@ -13,10 +12,8 @@ export function EventsSection() {
       <SectionFloralAccent id="events" tone="blush" corners="tr-bl" />
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <SectionHeading eyebrow="The Celebration" title={events.length > 1 ? "Wedding Events" : "The Wedding"} />
-
         <div
-          className={`mt-12 grid gap-10 ${
+          className={`grid gap-10 ${
             events.length > 1 ? "sm:grid-cols-2" : ""
           }`}
         >
